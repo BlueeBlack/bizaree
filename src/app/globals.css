@@ -217,13 +217,23 @@ strong { font-weight: 600; }
 .hero-bottle {
   --bottle-opacity: 1;
   position: absolute;
-  right: clamp(2vw, 10vw, 14vw);
-  bottom: -7vh;
-  height: 76vh;
+  right: 4vw;
+  top: 4vh;
+  height: 88vh;
   z-index: 0;
   pointer-events: none;
   opacity: 0;
   animation: bottle-fade 0.9s ease 0.35s forwards;
+}
+/* soft mint pool that seats the bottle against dark backgrounds */
+.hero-bottle::before {
+  content: "";
+  position: absolute; inset: -14%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(143, 251, 214, 0.14), transparent 72%);
+}
+[data-theme="dark"] .hero-bottle::before {
+  background: radial-gradient(closest-side, rgba(143, 251, 214, 0.22), transparent 72%);
 }
 .hero-bottle img {
   height: 100%; width: auto;
@@ -246,7 +256,7 @@ strong { font-weight: 600; }
   to   { transform: rotate(-25deg) translateY(-12px); }
 }
 @media (max-width: 860px) {
-  .hero-bottle { --bottle-opacity: 0.85; height: 48vh; right: -6vw; bottom: -3vh; }
+  .hero-bottle { --bottle-opacity: 0.85; height: 48vh; right: -6vw; top: auto; bottom: -3vh; }
 }
 .hero-eyebrow {
   font-size: var(--fs-meta);
@@ -298,7 +308,7 @@ strong { font-weight: 600; }
 .sticker-bg { fill: var(--mint); }
 .sticker-text {
   font-family: var(--font-chrome);
-  font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
   fill: var(--ink);
 }
 .sticker-drop { fill: var(--ink); }

@@ -11,9 +11,8 @@ export function EnquireSticker() {
         </defs>
         <circle cx="60" cy="60" r="58" className="sticker-bg" />
         <text className="sticker-text">
-          <textPath href="#stickerCircle">
-            ENQUIRE NOW ✦ ENQUIRE NOW ✦ ENQUIRE NOW ✦
-          </textPath>
+          {/* two repeats sized to the circle's circumference — three overlap the path start */}
+          <textPath href="#stickerCircle">ENQUIRE NOW ✦ ENQUIRE NOW ✦ </textPath>
         </text>
         <path
           className="sticker-drop"
