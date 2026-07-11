@@ -1,4 +1,5 @@
 import { CycleWord } from "@/components/motion/CycleWord";
+import { HeroBottle } from "@/components/motion/HeroBottle";
 import { HeroCanvas } from "@/components/motion/HeroCanvas";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitHeading } from "@/components/motion/SplitHeading";
@@ -9,6 +10,7 @@ export function Hero() {
   return (
     <section className="hero" id="home">
       <HeroCanvas />
+      <HeroBottle />
       <div className="hero-inner">
         <Reveal as="p" className="hero-eyebrow">
           <CycleWord words={HERO_CYCLE_WORDS} />

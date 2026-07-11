@@ -209,6 +209,45 @@ strong { font-weight: 600; }
   width: 100%; height: 100%;
   z-index: -1;
 }
+.hero-inner { position: relative; z-index: 1; }
+
+/* Diagonal product bottle behind the hero text.
+   Wrapper: opacity entry + JS mouse-parallax (inline transform).
+   Image: fixed tilt, entry settle, idle float — keeps transforms separate. */
+.hero-bottle {
+  --bottle-opacity: 1;
+  position: absolute;
+  right: clamp(2vw, 10vw, 14vw);
+  bottom: -7vh;
+  height: 76vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: bottle-fade 0.9s ease 0.35s forwards;
+}
+.hero-bottle img {
+  height: 100%; width: auto;
+  transform: rotate(-27deg);
+  transform-origin: 50% 60%;
+  filter: drop-shadow(14px 24px 32px rgba(20, 32, 27, 0.22));
+  animation:
+    bottle-settle 1.1s var(--ease-out) 0.35s backwards,
+    bottle-float 7s ease-in-out 1.6s infinite alternate;
+}
+@keyframes bottle-fade {
+  to { opacity: var(--bottle-opacity); }
+}
+@keyframes bottle-settle {
+  from { transform: rotate(-33deg) translateY(4vh); }
+  to   { transform: rotate(-27deg) translateY(0); }
+}
+@keyframes bottle-float {
+  from { transform: rotate(-27deg) translateY(0); }
+  to   { transform: rotate(-25deg) translateY(-12px); }
+}
+@media (max-width: 860px) {
+  .hero-bottle { --bottle-opacity: 0.85; height: 48vh; right: -6vw; bottom: -3vh; }
+}
 .hero-eyebrow {
   font-size: var(--fs-meta);
   letter-spacing: 0.14em; text-transform: uppercase;
