@@ -791,8 +791,9 @@ strong { font-weight: 600; }
   .pill-meta { display: none; } /* ticker + number carry the row on small screens */
   .contact-info { grid-template-columns: 1fr; }
   .enquiry-form input { width: 7.5em; }
-  /* left side on mobile so it doesn't cover the bottle's label */
-  .sticker { top: auto; bottom: 5.5rem; right: auto; left: 1.2rem; }
+  /* bottom-left corner on mobile, below the meta list; replaces the scroll hint */
+  .sticker { top: auto; bottom: 0.9rem; right: auto; left: 1.2rem; }
+  .hero-scroll-hint { display: none; }
 }
 
 /* ============ Reduced motion ============ */
