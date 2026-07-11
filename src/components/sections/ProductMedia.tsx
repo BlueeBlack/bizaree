@@ -1,15 +1,22 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { Product } from "@/lib/site";
 
 /**
  * Product image slot. Renders the real photo when `product.image` is set
- * (drop files in /public/products and set the path in lib/site.ts);
- * until then, a designed placeholder: dashed frame, bottle/jar glyph in
- * the product accent, volume label.
+ * AND the file exists under /public (checked at render/build time, so a
+ * path wired before the photo lands falls back to the placeholder instead
+ * of a broken image). Placeholder: dashed frame, bottle/jar glyph in the
+ * product accent, volume label.
  */
 export function ProductMedia({ product }: { product: Product }) {
-  if (product.image) {
+  const hasImage =
+    product.image !== undefined &&
+    existsSync(join(process.cwd(), "public", product.image));
+
+  if (hasImage && product.image) {
     return (
       <span className="product-media has-image">
         <Image

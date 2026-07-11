@@ -414,14 +414,14 @@ strong { font-weight: 600; }
 .product-entry {
   display: flex;
   gap: clamp(0.8rem, 2vw, 1.4rem);
-  align-items: stretch;
+  align-items: center;
 }
 .product-media {
   --accent-dot: var(--mint);
   position: relative;
   flex-shrink: 0;
   width: clamp(96px, 12vw, 148px);
-  min-height: 108px;
+  aspect-ratio: 4 / 5;
   border: 1.5px dashed var(--line);
   border-radius: 18px;
   background: var(--card);
@@ -432,8 +432,8 @@ strong { font-weight: 600; }
   transition: border-color 0.3s;
 }
 .product-entry:hover .product-media { border-color: var(--accent-dot); }
-.product-media.has-image { border-style: solid; padding: 0; }
-.product-media.has-image img { object-fit: cover; }
+.product-media.has-image { border-style: solid; padding: 0; background: #ffffff; }
+.product-media.has-image img { object-fit: contain; padding: 6%; }
 .pm-glyph { width: 30%; max-width: 40px; height: auto; }
 .pm-glyph-jar { width: 42%; max-width: 54px; }
 .pg-cap { fill: var(--fg); }

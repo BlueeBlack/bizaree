@@ -34,6 +34,7 @@ export const PRODUCTS: Product[] = [
     description: "Portable 250ml bottle offers crisp, refreshing hydration.",
     accent: "#62d6cb",
     volume: "250ml",
+    image: "/products/250ml.png",
     kind: "bottle",
   },
   {
@@ -45,6 +46,7 @@ export const PRODUCTS: Product[] = [
     description: "Handy 500ml bottle to help you quench your thirst.",
     accent: "#58c7e8",
     volume: "500ml",
+    image: "/products/500ml.png",
     kind: "bottle",
   },
   {
@@ -56,6 +58,7 @@ export const PRODUCTS: Product[] = [
     description: "The ideal hydration partner for all kinds of activities.",
     accent: "#8ffbd6",
     volume: "1L",
+    image: "/products/1l.png",
     kind: "bottle",
   },
   {
@@ -67,6 +70,7 @@ export const PRODUCTS: Product[] = [
     description: "A lasting hydrating experience in our 2 Litre bottle.",
     accent: "#ffd166",
     volume: "2L",
+    image: "/products/2l.png",
     kind: "bottle",
   },
   {
@@ -78,6 +82,7 @@ export const PRODUCTS: Product[] = [
     description: "Stay hydrated and have cool water ready for your requirements.",
     accent: "#7aa2ff",
     volume: "5L",
+    image: "/products/5l.png",
     kind: "jar",
   },
   {
@@ -89,6 +94,7 @@ export const PRODUCTS: Product[] = [
     description: "Ideal for large gatherings and sustained refreshment.",
     accent: "#0fa77e",
     volume: "20L",
+    image: "/products/20l.png",
     kind: "jar",
   },
 ];
