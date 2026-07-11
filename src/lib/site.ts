@@ -18,6 +18,10 @@ export type Product = {
   meta: string;
   description: string;
   accent: string;
+  volume: string;
+  kind: "bottle" | "jar";
+  /** Path under /public (e.g. "/products/250ml.jpg"). Placeholder shown until set. */
+  image?: string;
 };
 
 export const PRODUCTS: Product[] = [
@@ -29,6 +33,8 @@ export const PRODUCTS: Product[] = [
     meta: "250 ML · BOTTLE",
     description: "Portable 250ml bottle offers crisp, refreshing hydration.",
     accent: "#62d6cb",
+    volume: "250ml",
+    kind: "bottle",
   },
   {
     id: "500ml-bottle",
@@ -38,6 +44,8 @@ export const PRODUCTS: Product[] = [
     meta: "500 ML · BOTTLE",
     description: "Handy 500ml bottle to help you quench your thirst.",
     accent: "#58c7e8",
+    volume: "500ml",
+    kind: "bottle",
   },
   {
     id: "1l-bottle",
@@ -47,6 +55,8 @@ export const PRODUCTS: Product[] = [
     meta: "1 L · BOTTLE",
     description: "The ideal hydration partner for all kinds of activities.",
     accent: "#8ffbd6",
+    volume: "1L",
+    kind: "bottle",
   },
   {
     id: "2l-bottle",
@@ -56,6 +66,8 @@ export const PRODUCTS: Product[] = [
     meta: "2 L · BOTTLE",
     description: "A lasting hydrating experience in our 2 Litre bottle.",
     accent: "#ffd166",
+    volume: "2L",
+    kind: "bottle",
   },
   {
     id: "5l-jar",
@@ -65,6 +77,8 @@ export const PRODUCTS: Product[] = [
     meta: "5 L · JAR",
     description: "Stay hydrated and have cool water ready for your requirements.",
     accent: "#7aa2ff",
+    volume: "5L",
+    kind: "jar",
   },
   {
     id: "20l-jar",
@@ -74,6 +88,8 @@ export const PRODUCTS: Product[] = [
     meta: "20 L · JAR",
     description: "Ideal for large gatherings and sustained refreshment.",
     accent: "#0fa77e",
+    volume: "20L",
+    kind: "jar",
   },
 ];
 

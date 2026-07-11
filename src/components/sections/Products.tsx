@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitHeading } from "@/components/motion/SplitHeading";
+import { ProductMedia } from "@/components/sections/ProductMedia";
 import { ProductRow } from "@/components/sections/ProductRow";
 import { MetaStrip } from "@/components/ui/MetaStrip";
 import { PRODUCTS } from "@/lib/site";
@@ -18,9 +19,12 @@ export function Products() {
 
       <div className="pill-list">
         {PRODUCTS.map((product) => (
-          <Reveal key={product.id}>
-            <ProductRow product={product} />
-            <p className="pill-desc">{product.description}</p>
+          <Reveal key={product.id} className="product-entry">
+            <ProductMedia product={product} />
+            <div className="product-info">
+              <ProductRow product={product} />
+              <p className="pill-desc">{product.description}</p>
+            </div>
           </Reveal>
         ))}
       </div>
