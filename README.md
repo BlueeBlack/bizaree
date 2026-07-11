@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bizaree Water — Next.js site
 
-## Getting Started
+Enquiry-first marketing site for Bizaree Water (West Bengal's first fully
+automated water packaging plant), built in a technical-brutalist style:
+fixed mint plus-sign grid, viewport-filling display type, infinite marquee
+tickers, stadium product pill rows, and a sentence-style enquiry form that
+hands off to WhatsApp or email — no backend.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router) + TypeScript (strict) + Tailwind CSS v4
+- Zustand for the one piece of cross-component state (product → form prefill)
+- Self-hosted Google fonts via `next/font` (Archivo / Inter / Fredoka)
+- No animation libraries: CSS keyframes + IntersectionObserver + a 2D canvas
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000 (set PORT=3100 if 3000 is busy)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm run build` | Production build (fully static prerender) |
+| `npm start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | `tsc --noEmit` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where things live
 
-## Learn More
+- `src/lib/site.ts` — **all site content** (products, testimonials, contact,
+  nav, tickers). Edit copy here, not in components.
+- `src/components/sections/` — one component per page section.
+- `src/components/motion/` — Reveal, SplitHeading, Marquee, EchoHeading,
+  HeroCanvas, CycleWord.
+- `src/components/chrome/` — menu overlay, monogram, theme toggle, grid.
+- `src/app/globals.css` — design tokens + the signature visual devices.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploying
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Any Node host or Vercel/Netlify works as-is. For plain static hosting,
+add `output: "export"` to `next.config.ts` — the page is already fully
+static, nothing else changes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A dependency-free static version of the same design lives one folder up
+(`../index.html`) for hosts without Node.
