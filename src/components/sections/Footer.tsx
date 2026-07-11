@@ -15,8 +15,8 @@ export function Footer() {
           ))}
         </div>
         <div className="footer-meta">
-          <span>© 2024 BIZAREE WATER</span>
-          <span>DESIGNED BY ADCENTS.CO</span>
+          <span>© {new Date().getFullYear()} BIZAREE WATER</span>
+          <span>DESIGNED BY blueeblack.com</span>
           <span>LAST REVISED 2026 · 07</span>
         </div>
       </div>
