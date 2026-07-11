@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Bizaree Water — Packaged Drinking Water | West Bengal",
   description:
     "Bizaree Water — West Bengal's first fully automated water packaging plant. Enquire about our range: 250ml to 20L packaged drinking water. 25+ years of experience, 24/7 plant operations.",
+  // iOS auto-wraps detected phone numbers in tel: links pre-hydration,
+  // causing React hydration mismatches (the ticker shows our number as text).
+  formatDetection: { telephone: false },
 };
 
 /** Runs pre-paint: restores the saved theme and flags JS availability
