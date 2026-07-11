@@ -791,8 +791,11 @@ strong { font-weight: 600; }
   .pill-meta { display: none; } /* ticker + number carry the row on small screens */
   .contact-info { grid-template-columns: 1fr; }
   .enquiry-form input { width: 7.5em; }
-  /* bottom-left corner on mobile, below the meta list; replaces the scroll hint */
-  .sticker { top: auto; bottom: 0.9rem; right: auto; left: 1.2rem; }
+  /* in-flow on mobile: sits after the text block, can never overlap it */
+  .sticker {
+    position: static;
+    margin: 2.2rem 0 0 0.3rem;
+  }
   .hero-scroll-hint { display: none; }
 }
 
