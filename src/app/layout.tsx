@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Fredoka, Inter } from "next/font/google";
+import Script from "next/script";
 import { GridBackground } from "@/components/chrome/GridBackground";
 import { SiteChrome } from "@/components/chrome/SiteChrome";
 import { ThemeToggle } from "@/components/chrome/ThemeToggle";
@@ -48,10 +49,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${archivo.variable} ${inter.variable} ${fredoka.variable}`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
         <GridBackground />
         <SiteChrome />
         <ThemeToggle />
